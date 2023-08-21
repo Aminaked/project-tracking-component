@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital@1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+:root {
+  --red: hsl(0, 100%, 68%);
+  --lightRed: hsla(0, 100%, 68%, 0.609);
+  --veryDarkBlue: hsl(230, 29%, 20%);
+  --darkGrayishBlue: hsl(230, 11%, 40%);
+  --grayishBlue: hsl(231, 7%, 65%);
+  --lightGrayishBlue: hsl(207, 33%, 95%);
+  --barlowCondensed: "Barlow Condensed", sans-serif;
+  --barlow: "Barlow", sans-serif;
+  --gap: 80px;
+}
+body{
+  overflow-x:hidden ;
+}
+.container {
+  width: 80vw;
+  min-height: 100vh;
+  margin: auto;
+  
+}
+Button{
+  display: none;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 0;
+  & > img {
+    width: 42px;
+    height: 42px;
+  }
+  & > ul {
+    display: flex;
+    gap: var(--gap);
+    & > li {
+      position: relative;
+      font-family: var(--barlowCondensed);
+      font-weight: 700;
+      font-size: 18px;
+      cursor: pointer;
+      &:hover {
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: black;
+        }
+      }
+    }
+    & > #loginBtn {
+      display: flex;
+      align-items: center;
+      gap: var(--gap);
+      color: var(--grayishBlue);
+      &::before {
+        display: inline-block;
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--grayishBlue);
+      }
+      &:hover {
+        &::after {
+          width: calc(100% - var(--gap) - 8px);
+          right: 0;
+          left: auto;
+        }
+      }
+    }
+  }
+}
+
+.heroContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0;
+  &::before {
+    content: "";
+    display: block;
+    z-index: -10;
+    position: absolute;
+    right: 0;
+    top: -5%;
+    width: 50%;
+    height: 50%;
+    background-color: var(--lightGrayishBlue);
+    border-radius: 0 0 0 50px;
+  }
+  & > .rightSide {
+    & > img {
+      position: absolute;
+      left: 50%;
+    }
+  }
+  & > .leftSide {
+    & > .announceHeading {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      & > span {
+        background-color: var(--veryDarkBlue);
+        padding: 4px 10px;
+        border-radius: 30px;
+        font-family: var(--barlowCondensed);
+        color: white;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      & > h3 {
+        font-family: var(--barlow);
+        color: var(--grayishBlue);
+        letter-spacing: 3px;
+        font-size: 18px;
+      }
+    }
+    & > h1 {
+      font-family: var(--barlowCondensed);
+      font-weight: 700;
+      font-size: 70px;
+      color: var(--veryDarkBlue);
+      margin-bottom: 30px;
+    }
+    & > p {
+      font-family: var(--barlowCondensed);
+      color: var(--darkGrayishBlue);
+      font-size: 24px;
+      letter-spacing: 1px;
+      margin-bottom: 60px;
+    }
+    & > .CTR {
+      & > a {
+        text-decoration: none;
+        padding: 18px 32px;
+        background-color: var(--red);
+        font-family: var(--barlowCondensed);
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1px;
+        font-size: 18px;
+        border-radius: 8px;
+        margin-right: 20px;
+        &:hover {
+          background-color: var(--lightRed);
+        }
+      }
+      & > span {
+        text-transform: uppercase;
+        font-family: var(--barlow);
+        font-size: 18px;
+        color: var(--grayishBlue);
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+@media (max-width:374px){
+ 
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0;
+   
+    & > img {
+      width: 30px;
+      height: 30px;
+    }
+    & > ul {
+      display:flex;
+      flex-direction:column;
+      border-radius: 0.625rem;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+      transition: 0.3s;
+      gap: 20px;
+     
+      & > li {
+      
+        position: relative;
+        font-family: var(--barlowCondensed);
+        font-weight: 700;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover {
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+          }
+        }
+      }
+      & > #loginBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        gap: 20px;
+        color: var(--grayishBlue);
+        &::before {
+          display: inline-block;
+          content: "";
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: var(--grayishBlue);
+        }
+        &:hover {
+          &::after {
+            width: calc(100% -20px - 8px);
+            right: 0;
+            left: auto;
+          }
+        }
+      }
+    }
+     & > button{
+    
+      display: inline;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      
+    } 
+  }
+
+  
+  
+  
+  .heroContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content:center;
+    gap: 50px;
+    
+    & > .rightSide{
+      & > img{
+      position: static;
+      width: 30rem;
+    }}
+    & > .leftSide {
+      
+      & > h1 {
+        font-family: var(--barlowCondensed);
+        font-weight: 700;
+        font-size: 40px;
+        color: var(--veryDarkBlue);
+        margin-bottom: 30px;
+      } & >  p {
+        font-family: var(--barlowCondensed);
+        color: var(--darkGrayishBlue);
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 60px;
+      }
+      
+    } & > .CTR {
+       & > a {
+        text-decoration: none;
+        padding: 0px 0px;
+        background-color: var(--red);
+        font-family: var(--barlowCondensed);
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1px;
+        font-size: 18px;
+        border-radius: 8px;
+        margin-right: 0px;
+        &:hover {
+          background-color: var(--lightRed);
+        }
+      }
+      & > span {
+        text-transform: uppercase;
+        font-family: var(--barlow);
+        font-size: 18px;
+        color: var(--grayishBlue);
+        letter-spacing: 0px;
+      }
+    }
+}}
